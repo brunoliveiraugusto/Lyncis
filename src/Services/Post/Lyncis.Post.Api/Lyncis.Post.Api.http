@@ -1,0 +1,6 @@
+@Lyncis.Post.Api_HostAddress = http://localhost:5259
+
+GET {{Lyncis.Post.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

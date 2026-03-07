@@ -1,0 +1,31 @@
+<Solution>
+  <Folder Name="/src/0 - Entry Points/">
+    <Project Path="src/Gateway/Lyncis.Gateway/Lyncis.Gateway.csproj" />
+  </Folder>
+
+  <Folder Name="/src/1 - Identity Security/">
+    <Project Path="src/Identity/Lyncis.Identity.Api/Lyncis.Identity.Api.csproj" />
+  </Folder>
+
+  <Folder Name="/src/2 - Services/Post/">
+      <Project Path="src/Services/Post/Lyncis.Post.Api/Lyncis.Post.Api.csproj" />
+  </Folder>
+
+  <Folder Name="/src/2 - Services/Social/">
+    <Project Path="src/Services/Social/Lyncis.Social.Api/Lyncis.Social.Api.csproj" />
+  </Folder>
+
+  <Folder Name="/src/2 - Services/Media/">
+    <Project Path="src/Services/Media/Lyncis.Media.Api/Lyncis.Media.Api.csproj" />
+  </Folder>
+
+  <Folder Name="/src/3 - Shared/">
+    
+  </Folder>
+
+  <Folder Name="/Tests/">
+  </Folder>
+
+  <Folder Name="/docker/">
+  </Folder>
+</Solution>
