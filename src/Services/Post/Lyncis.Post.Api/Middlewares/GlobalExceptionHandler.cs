@@ -10,30 +10,31 @@ namespace Lyncis.Post.Api.Middlewares
 
         public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
         {
+            if (exception is not ValidationException validationException)
+            {
+                return false;
+            }
+
             _logger.LogError(exception, "An unhandled exception occurred: {Message}", exception.Message);
 
-            var problemDetails = exception switch
+            var problemDetails = new ProblemDetails
             {
-                ValidationException validationException => new ProblemDetails
+                Status = StatusCodes.Status400BadRequest,
+                Title = "Validation Failed",
+                Detail = "One or more validation errors occurred",
+                Instance = httpContext.Request.Path,
+                Extensions =
                 {
-                    Status = StatusCodes.Status400BadRequest,
-                    Title = "Validation Failed",
-                    Detail = "One or more validation errors ocurred",
-                    Extensions =
-                    {
-                        ["errors"] = validationException.Errors
-                            .Select(e => new { e.PropertyName, e.ErrorMessage })
-                    }
-                },
-                _ => new ProblemDetails
-                {
-                    Status = StatusCodes.Status500InternalServerError,
-                    Title = "Server Error",
-                    Detail = "An unexpected error occurred on our end"
+                    ["errors"] = validationException.Errors
+                        .GroupBy(e => e.PropertyName)
+                        .ToDictionary(
+                            g => g.Key,
+                            g => g.Select(x => x.ErrorMessage).ToArray()
+                        )
                 }
             };
 
-            httpContext.Response.StatusCode = problemDetails.Status ?? StatusCodes.Status500InternalServerError;
+            httpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
             await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken);
 
             return true;
