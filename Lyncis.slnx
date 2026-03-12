@@ -6,6 +6,7 @@
 
   <Folder Name="/src/1 - Identity Security/">
     <Project Path="src/Identity/Lyncis.Identity.Api/Lyncis.Identity.Api.csproj" />
+    <Project Path="src/Identity/Lyncis.Identity.Contracts/Lyncis.Identity.Contracts.csproj" />
   </Folder>
 
   <Folder Name="/src/2 - Services/Post/">
