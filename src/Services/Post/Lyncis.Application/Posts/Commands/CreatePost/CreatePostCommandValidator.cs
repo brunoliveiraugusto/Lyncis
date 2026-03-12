@@ -1,0 +1,22 @@
+﻿using FluentValidation;
+
+namespace Lyncis.Application.Posts.Commands.CreatePost
+{
+    public class CreatePostCommandValidator : AbstractValidator<CreatePostCommand>
+    {
+        public CreatePostCommandValidator()
+        {
+            RuleFor(x => x.AuthorId)
+                .NotEqual(Guid.Empty)
+                .WithMessage("A valid author is required");
+
+            RuleFor(x => x.Content)
+                .NotEmpty().WithMessage("Post content cannot be empty")
+                .MaximumLength(280).WithMessage("Post content must be 280 characters or less");
+
+            RuleFor(x => x.MediaIds)
+                .Must(x => x == null || x.Count <= 4)
+                .WithMessage("You cannot attach more than 4 media items");
+        }
+    }
+}

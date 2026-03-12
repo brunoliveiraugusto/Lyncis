@@ -1,4 +1,6 @@
-﻿using Lyncis.Application.Posts.Commands.CreatePost;
+﻿using FluentValidation;
+using Lyncis.Application.Common.Behaviors;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Lyncis.Application
@@ -7,8 +9,13 @@ namespace Lyncis.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddMediatR(cfg =>
-                cfg.RegisterServicesFromAssembly(typeof(CreatePostCommand).Assembly));
+            var assembly = typeof(DependencyInjection).Assembly;
+
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
+
+            services.AddValidatorsFromAssembly(assembly);
+
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             return services;
         }
