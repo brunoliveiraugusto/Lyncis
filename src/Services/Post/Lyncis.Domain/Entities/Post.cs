@@ -6,6 +6,7 @@ namespace Lyncis.Domain.Entities
     {
         public Guid Id { get; private set; }
         public Guid AuthorId { get; private set; }
+        public string AuthorName { get; private set; }
         public string Content { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public DateTime? UpdatedAt { get; private set; }
@@ -14,12 +15,13 @@ namespace Lyncis.Domain.Entities
 
         private readonly List<Guid> _mediaIds = [];
 
-        internal Post(Guid authorId, string content)
+        internal Post(Guid authorId, string authorName, string content)
         {
             ValidateContent(content);
 
             Id = Guid.NewGuid();
             AuthorId = authorId;
+            AuthorName = authorName;
             Content = content;
             CreatedAt = DateTime.UtcNow;
             Status = PostStatus.Published;

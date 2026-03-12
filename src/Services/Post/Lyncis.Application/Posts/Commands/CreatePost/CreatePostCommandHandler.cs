@@ -10,7 +10,7 @@ namespace Lyncis.Application.Posts.Commands.CreatePost
 
         public async Task<Guid> Handle(CreatePostCommand request, CancellationToken cancellationToken)
         {
-            var post = PostFactory.Create(request.AuthorId, request.Content, request.MediaIds);
+            var post = PostFactory.Create(request.AuthorId, request.AuthorName, request.Content, request.MediaIds);
             
             await _repository.AddAsync(post);
 

@@ -4,9 +4,9 @@ namespace Lyncis.Domain.Factories
 {
     public static class PostFactory
     {
-        public static Post Create(Guid authorId, string content, List<Guid>? mediaIds)
+        public static Post Create(Guid authorId, string authorName, string content, List<Guid>? mediaIds)
         {
-            var post = new Post(authorId, content);
+            var post = new Post(authorId, authorName, content);
 
             if (mediaIds != null)
             {
