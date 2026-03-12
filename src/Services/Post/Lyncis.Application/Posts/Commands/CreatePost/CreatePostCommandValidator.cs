@@ -7,11 +7,13 @@ namespace Lyncis.Application.Posts.Commands.CreatePost
         public CreatePostCommandValidator()
         {
             RuleFor(x => x.AuthorId)
+                .NotEmpty()
                 .NotEqual(Guid.Empty)
                 .WithMessage("A valid author is required");
 
             RuleFor(x => x.Content)
-                .NotEmpty().WithMessage("Post content cannot be empty")
+                .NotEmpty()
+                .WithMessage("Post content cannot be empty")
                 .MaximumLength(280).WithMessage("Post content must be 280 characters or less");
 
             RuleFor(x => x.MediaIds)
