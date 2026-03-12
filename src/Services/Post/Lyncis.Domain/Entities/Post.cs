@@ -17,6 +17,7 @@ namespace Lyncis.Domain.Entities
 
         internal Post(Guid authorId, string authorName, string content)
         {
+            ValidateAuthor(authorId, authorName);
             ValidateContent(content);
 
             Id = Guid.NewGuid();
@@ -40,6 +41,15 @@ namespace Lyncis.Domain.Entities
                 throw new InvalidOperationException("A post can have a maximum of 4 media items.");
 
             _mediaIds.Add(mediaId);
+        }
+
+        private static void ValidateAuthor(Guid authorId, string authorName)
+        {
+            if (Guid.Empty == authorId)
+                throw new ArgumentException("Post author id cannot be empty.");
+
+            if (string.IsNullOrEmpty(authorName))
+                throw new ArgumentException("Post author name cannot be empty.");
         }
 
         private static void ValidateContent(string content)

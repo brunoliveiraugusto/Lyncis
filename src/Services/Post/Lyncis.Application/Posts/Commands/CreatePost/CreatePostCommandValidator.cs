@@ -11,6 +11,10 @@ namespace Lyncis.Application.Posts.Commands.CreatePost
                 .NotEqual(Guid.Empty)
                 .WithMessage("A valid author is required");
 
+            RuleFor(x => x.AuthorName)
+                .NotEmpty().WithMessage("A valid author is required")
+                .MaximumLength(200).WithMessage("Post author name must be 200 characters or less");
+
             RuleFor(x => x.Content)
                 .NotEmpty()
                 .WithMessage("Post content cannot be empty")
