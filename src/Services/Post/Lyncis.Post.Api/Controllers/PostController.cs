@@ -7,7 +7,7 @@ namespace Lyncis.Post.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PostsController(IMediator mediator) : ControllerBase
+    public class PostController(IMediator mediator) : ControllerBase
     {
         private readonly IMediator _mediator = mediator;
 
