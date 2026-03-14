@@ -7,7 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Lyncis.Shared\Lyncis.Shared.csproj" />
+    <ProjectReference Include="..\Lyncis.Identity.Application\Lyncis.Identity.Application.csproj" />
+    <ProjectReference Include="..\Lyncis.Identity.Infrastructure\Lyncis.Identity.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,23 +1,50 @@
 {
   "Routes": [
     {
+      "DownstreamPathTemplate": "/api/user/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/user/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "PATCH" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/media/{everything}",
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [{"Host": "localhost","Port": 5002}],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
       "UpstreamPathTemplate": "/media/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/posts/{everything}",
+      "DownstreamPathTemplate": "/api/post/{everything}",
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [{"Host": "localhost","Port": 5003}],
-      "UpstreamPathTemplate": "/posts/{everything}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/post/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
     {
       "DownstreamPathTemplate": "/api/social/{everything}",
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [{"Host": "localhost","Port": 5004}],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
       "UpstreamPathTemplate": "/social/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     }
