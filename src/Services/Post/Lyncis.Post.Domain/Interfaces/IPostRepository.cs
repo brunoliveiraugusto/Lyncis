@@ -6,5 +6,6 @@
         Task AddAsync(Entities.Post post);
         Task UpdateAsync(Entities.Post post);
         Task DeleteAsync(Guid id);
+        Task UpdateAuthorNameAsync(Guid userId, string newName);
     }
 }
