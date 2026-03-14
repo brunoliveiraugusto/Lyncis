@@ -1,16 +1,13 @@
 using Lyncis.Post.Application;
 using Lyncis.Post.Infrastructure;
-using Lyncis.Post.Api.Middlewares;
+using Lyncis.Shared.DI;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
-builder.Services.AddProblemDetails();
-
+builder.Services.AddSharedInfrastructure();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddControllers();
-
 builder.Services.AddHealthChecks();
 
 var app = builder.Build();

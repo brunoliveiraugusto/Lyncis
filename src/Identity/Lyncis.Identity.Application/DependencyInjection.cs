@@ -2,7 +2,7 @@
 using Lyncis.Shared.DI;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Lyncis.Post.Application
+namespace Lyncis.Identity.Application
 {
     public static class DependencyInjection
     {
