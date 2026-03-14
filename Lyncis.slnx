@@ -29,7 +29,7 @@
   </Folder>
 
   <Folder Name="/src/3 - Shared/">
-    
+    <Project Path="src/Shared/Lyncis.Shared/Lyncis.Shared.csproj" />
   </Folder>
 
   <Folder Name="/Tests/">
