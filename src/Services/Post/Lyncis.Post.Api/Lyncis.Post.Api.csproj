@@ -7,15 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lyncis.Post.Application\Lyncis.Post.Application.csproj" />
-    <ProjectReference Include="..\Lyncis.Post.Infrastructure\Lyncis.Post.Infrastructure.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
+    <ProjectReference Include="..\..\..\Shared\Lyncis.Shared\Lyncis.Shared.csproj" />
+    <ProjectReference Include="..\Lyncis.Post.Application\Lyncis.Post.Application.csproj" />
+    <ProjectReference Include="..\Lyncis.Post.Infrastructure\Lyncis.Post.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

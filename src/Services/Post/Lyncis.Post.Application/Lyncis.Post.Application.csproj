@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Lyncis.Shared\Lyncis.Shared.csproj" />
     <ProjectReference Include="..\Lyncis.Post.Domain\Lyncis.Post.Domain.csproj" />
   </ItemGroup>
 

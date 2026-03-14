@@ -15,6 +15,8 @@ namespace Lyncis.Post.Domain.Entities
 
         private readonly List<Guid> _mediaIds = [];
 
+        private Post() { }
+
         internal Post(Guid authorId, string authorName, string content)
         {
             ValidateAuthor(authorId, authorName);

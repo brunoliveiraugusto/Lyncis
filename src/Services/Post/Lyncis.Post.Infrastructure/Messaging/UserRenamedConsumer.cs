@@ -1,5 +1,5 @@
 ﻿using Lyncis.Identity.Contracts;
-using Lyncis.Post.Application.Users.UpdatePostAuthorName;
+using Lyncis.Post.Application.Users.Commands.UpdatePostAuthorName;
 using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
