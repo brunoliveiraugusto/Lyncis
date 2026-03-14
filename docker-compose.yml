@@ -1,0 +1,27 @@
+services:
+    rabbitmq:
+        image: rabbitmq:3-management
+        container_name: lyncis-rabbitmq
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+        environment:
+            - RABBITMQ_DEFAULT_USER=guest
+            - RABBITMQ_DEFAULT_PASS=guest
+        networks:
+            - lyncis-network
+
+    sqlserver:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        container_name: lyncis-sqlserver
+        ports:
+            - "1433:1433"
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=LN%x/Bo+{p?!k-S"PAzunn2{7#9=4?
+        networks: 
+            - lyncis-network
+
+networks:
+    lyncis-network:
+        driver: bridge
