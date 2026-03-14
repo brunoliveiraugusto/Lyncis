@@ -11,4 +11,9 @@
     <PackageReference Include="MediatR" Version="14.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Lyncis.Shared\Lyncis.Shared.csproj" />
+    <ProjectReference Include="..\Lyncis.Identity.Domain\Lyncis.Identity.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
