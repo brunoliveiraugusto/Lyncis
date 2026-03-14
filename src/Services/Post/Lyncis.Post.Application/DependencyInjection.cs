@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using Lyncis.Application.Common.Behaviors;
+using Lyncis.Post.Application.Common.Behaviors;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Lyncis.Application
+namespace Lyncis.Post.Application
 {
     public static class DependencyInjection
     {

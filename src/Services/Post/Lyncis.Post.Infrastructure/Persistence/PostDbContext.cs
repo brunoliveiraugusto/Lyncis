@@ -1,5 +1,4 @@
-﻿using Lyncis.Post.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Lyncis.Post.Infrastructure.Persistence
 {

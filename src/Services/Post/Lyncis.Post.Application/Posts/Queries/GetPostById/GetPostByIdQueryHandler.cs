@@ -1,7 +1,7 @@
-﻿using Lyncis.Domain.Interfaces;
+﻿using Lyncis.Post.Domain.Interfaces;
 using MediatR;
 
-namespace Lyncis.Application.Posts.Queries.GetPostById
+namespace Lyncis.Post.Application.Posts.Queries.GetPostById
 {
     public class GetPostByIdQueryHandler(IPostRepository repository) : IRequestHandler<GetPostByIdQuery, PostResponse?>
     {

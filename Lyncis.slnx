@@ -10,10 +10,10 @@
   </Folder>
 
   <Folder Name="/src/2 - Services/Post/">
-	<Project Path="src/Services/Post/Lyncis.Post.Api/Lyncis.Post.Api.csproj" />
-    <Project Path="src/Services/Post/Lyncis.Application/Lyncis.Application.csproj" />
-	<Project Path="src/Services/Post/Lyncis.Domain/Lyncis.Domain.csproj" />
-	<Project Path="src/Services/Post/Lyncis.Infrastructure/Lyncis.Infrastructure.csproj" />
+    <Project Path="src/Services/Post/Lyncis.Post.Application/Lyncis.Post.Application.csproj" />
+    <Project Path="src/Services/Post/Lyncis.Post.Domain/Lyncis.Post.Domain.csproj" />
+    <Project Path="src/Services/Post/Lyncis.Post.Infrastructure/Lyncis.Post.Infrastructure.csproj" />
+    <Project Path="src/Services/Post/Lyncis.Post.Api/Lyncis.Post.Api.csproj" />
   </Folder>
 
   <Folder Name="/src/2 - Services/Social/">
@@ -33,5 +33,6 @@
   </Folder>
 
   <Folder Name="/docker/">
+    <File Path="docker-compose.yml" />
   </Folder>
 </Solution>

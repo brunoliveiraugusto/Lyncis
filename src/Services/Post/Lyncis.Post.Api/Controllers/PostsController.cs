@@ -1,5 +1,5 @@
-﻿using Lyncis.Application.Posts.Commands.CreatePost;
-using Lyncis.Application.Posts.Queries.GetPostById;
+﻿using Lyncis.Post.Application.Posts.Commands.CreatePost;
+using Lyncis.Post.Application.Posts.Queries.GetPostById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

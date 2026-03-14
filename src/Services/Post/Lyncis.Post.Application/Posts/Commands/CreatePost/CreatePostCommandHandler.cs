@@ -1,8 +1,8 @@
-﻿using Lyncis.Domain.Factories;
-using Lyncis.Domain.Interfaces;
+﻿using Lyncis.Post.Domain.Factories;
+using Lyncis.Post.Domain.Interfaces;
 using MediatR;
 
-namespace Lyncis.Application.Posts.Commands.CreatePost
+namespace Lyncis.Post.Application.Posts.Commands.CreatePost
 {
     public class CreatePostCommandHandler(IPostRepository repository) : IRequestHandler<CreatePostCommand, Guid>
     {

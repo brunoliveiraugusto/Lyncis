@@ -1,4 +1,4 @@
-﻿namespace Lyncis.Domain.Entities.Enums
+﻿namespace Lyncis.Post.Domain.Entities.Enums
 {
     public enum PostStatus
     {

@@ -1,6 +1,6 @@
-﻿using Lyncis.Domain.Entities.Enums;
+﻿using Lyncis.Post.Domain.Entities.Enums;
 
-namespace Lyncis.Domain.Entities
+namespace Lyncis.Post.Domain.Entities
 {
     public class Post
     {

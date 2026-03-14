@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lyncis.Application\Lyncis.Application.csproj" />
-    <ProjectReference Include="..\Lyncis.Infrastructure\Lyncis.Infrastructure.csproj" />
+    <ProjectReference Include="..\Lyncis.Post.Application\Lyncis.Post.Application.csproj" />
+    <ProjectReference Include="..\Lyncis.Post.Infrastructure\Lyncis.Post.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

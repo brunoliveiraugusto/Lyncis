@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Lyncis.Application.Posts.Commands.CreatePost
+namespace Lyncis.Post.Application.Posts.Commands.CreatePost
 {
     public class CreatePostCommandValidator : AbstractValidator<CreatePostCommand>
     {

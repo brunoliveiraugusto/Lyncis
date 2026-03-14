@@ -1,5 +1,5 @@
-using Lyncis.Application;
-using Lyncis.Infrastructure;
+using Lyncis.Post.Application;
+using Lyncis.Post.Infrastructure;
 using Lyncis.Post.Api.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);

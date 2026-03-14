@@ -1,12 +1,10 @@
-﻿using Lyncis.Domain.Entities;
-
-namespace Lyncis.Domain.Factories
+﻿namespace Lyncis.Post.Domain.Factories
 {
     public static class PostFactory
     {
-        public static Post Create(Guid authorId, string authorName, string content, List<Guid>? mediaIds)
+        public static Entities.Post Create(Guid authorId, string authorName, string content, List<Guid>? mediaIds)
         {
-            var post = new Post(authorId, authorName, content);
+            var post = new Entities.Post(authorId, authorName, content);
 
             if (mediaIds != null)
             {
