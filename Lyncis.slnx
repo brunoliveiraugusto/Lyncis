@@ -6,14 +6,17 @@
 
   <Folder Name="/src/1 - Identity Security/">
     <Project Path="src/Identity/Lyncis.Identity.Api/Lyncis.Identity.Api.csproj" />
+    <Project Path="src/Identity/Lyncis.Identity.Application/Lyncis.Identity.Application.csproj" Id="e96a8807-bc92-4777-827b-b4e98cadb5ad" />
     <Project Path="src/Identity/Lyncis.Identity.Contracts/Lyncis.Identity.Contracts.csproj" />
+    <Project Path="src/Identity/Lyncis.Identity.Domain/Lyncis.Identity.Domain.csproj" Id="f697a3fa-d730-4fa4-adf0-72f6ec17ef5c" />
+    <Project Path="src/Identity/Lyncis.Identity.Infrastructure/Lyncis.Identity.Infrastructure.csproj" Id="a029fc40-23bf-4f24-b1c1-571e12517cfe" />
   </Folder>
 
   <Folder Name="/src/2 - Services/Post/">
+    <Project Path="src/Services/Post/Lyncis.Post.Api/Lyncis.Post.Api.csproj" />
     <Project Path="src/Services/Post/Lyncis.Post.Application/Lyncis.Post.Application.csproj" />
     <Project Path="src/Services/Post/Lyncis.Post.Domain/Lyncis.Post.Domain.csproj" />
     <Project Path="src/Services/Post/Lyncis.Post.Infrastructure/Lyncis.Post.Infrastructure.csproj" />
-    <Project Path="src/Services/Post/Lyncis.Post.Api/Lyncis.Post.Api.csproj" />
   </Folder>
 
   <Folder Name="/src/2 - Services/Social/">
