@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Persistence\Configurations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lyncis.Identity.Domain\Lyncis.Identity.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
