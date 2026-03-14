@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="9.0.1" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="9.0.1" />
+    <PackageReference Include="MediatR" Version="14.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Identity\Lyncis.Identity.Contracts\Lyncis.Identity.Contracts.csproj" />
+    <ProjectReference Include="..\Lyncis.Post.Application\Lyncis.Post.Application.csproj" />
     <ProjectReference Include="..\Lyncis.Post.Domain\Lyncis.Post.Domain.csproj" />
   </ItemGroup>
 
