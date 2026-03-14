@@ -5,6 +5,10 @@
         public Guid Id { get; private set; }
         public string Name { get; private set; }
         public string Email { get; private set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+
+        private User() { }
 
         public User(string name, string email)
         {
@@ -21,17 +25,18 @@
             ValidateName(newName);
 
             Name = newName;
+            UpdatedAt = DateTime.UtcNow;
         }
 
         private static void ValidateName(string name)
         {
-            if (!string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(name))
                 throw new ArgumentException("Name cannot be empty.");
         }
 
         private static void ValidateEmail(string email)
         {
-            if (!string.IsNullOrEmpty(email))
+            if (string.IsNullOrEmpty(email))
                 throw new ArgumentException("Email cannot be empty.");
         }
     }
