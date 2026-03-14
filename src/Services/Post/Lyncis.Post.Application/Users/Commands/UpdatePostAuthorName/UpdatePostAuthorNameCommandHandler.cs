@@ -1,7 +1,7 @@
 ﻿using Lyncis.Post.Domain.Interfaces;
 using MediatR;
 
-namespace Lyncis.Post.Application.Users.UpdatePostAuthorName
+namespace Lyncis.Post.Application.Users.Commands.UpdatePostAuthorName
 {
     public class UpdatePostAuthorNameCommandHandler(IPostRepository repository) : IRequestHandler<UpdatePostAuthorNameCommand>
     {

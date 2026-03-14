@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Lyncis.Post.Application.Users.UpdatePostAuthorName
+namespace Lyncis.Post.Application.Users.Commands.UpdatePostAuthorName
 {
     public class UpdatePostAuthorNameCommandValidator : AbstractValidator<UpdatePostAuthorNameCommand>
     {

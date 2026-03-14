@@ -15,8 +15,4 @@
     <ProjectReference Include="..\Lyncis.Post.Domain\Lyncis.Post.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Users\Commands\" />
-  </ItemGroup>
-
 </Project>
