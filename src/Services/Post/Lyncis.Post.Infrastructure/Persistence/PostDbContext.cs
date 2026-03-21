@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MassTransit;
+using Microsoft.EntityFrameworkCore;
 
 namespace Lyncis.Post.Infrastructure.Persistence
 {
@@ -9,6 +10,7 @@ namespace Lyncis.Post.Infrastructure.Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(PostDbContext).Assembly);
+            modelBuilder.AddTransactionalOutboxEntities();
         }
     }
 }

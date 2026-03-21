@@ -1,5 +1,4 @@
-﻿using Lyncis.Shared.Behaviors;
-using Lyncis.Shared.DI;
+﻿using Lyncis.Shared.DI;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Lyncis.Post.Application
@@ -11,7 +10,6 @@ namespace Lyncis.Post.Application
             services.AddMediatR(cfg => {
                 cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
                 cfg.AddSharedMediatR();
-                cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
             });
 
             return services;

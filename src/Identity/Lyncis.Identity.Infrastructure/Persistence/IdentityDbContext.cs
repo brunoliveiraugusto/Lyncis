@@ -1,4 +1,5 @@
 ﻿using Lyncis.Identity.Domain.Entities;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lyncis.Identity.Infrastructure.Persistence
@@ -10,6 +11,7 @@ namespace Lyncis.Identity.Infrastructure.Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(IdentityDbContext).Assembly);
+            modelBuilder.AddTransactionalOutboxEntities();
         }
     }
 }

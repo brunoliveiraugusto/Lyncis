@@ -27,6 +27,11 @@ namespace Lyncis.Post.Infrastructure
         {
             services.AddMassTransit(mt =>
             {
+                mt.AddEntityFrameworkOutbox<PostDbContext>(o =>
+                {
+                    o.UseSqlServer();
+                });
+
                 mt.AddConsumer<UserRenamedConsumer>();
 
                 mt.UsingRabbitMq((context, cfg) =>
@@ -35,6 +40,8 @@ namespace Lyncis.Post.Infrastructure
 
                     cfg.ReceiveEndpoint(queueName: configuration["RabbitMQ:UserRenamedEvent"] ?? throw new ArgumentException("Queue name not defined"), e =>
                     {
+                        e.UseEntityFrameworkOutbox<PostDbContext>(context);
+
                         e.ConfigureConsumer<UserRenamedConsumer>(context);
                     });
                 });

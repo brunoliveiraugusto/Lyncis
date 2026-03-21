@@ -21,6 +21,7 @@ namespace Lyncis.Identity.Infrastructure
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IIdentityEventService, IdentityEventService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
         }
@@ -29,9 +30,16 @@ namespace Lyncis.Identity.Infrastructure
         {
             services.AddMassTransit(x =>
             {
+                x.AddEntityFrameworkOutbox<IdentityDbContext>(o =>
+                {
+                    o.UseSqlServer();
+                    o.UseBusOutbox();
+                });
+
                 x.UsingRabbitMq((context, cfg) =>
                 {
                     cfg.Host("localhost", "/");
+                    cfg.ConfigureEndpoints(context);
                 });
             });
 
