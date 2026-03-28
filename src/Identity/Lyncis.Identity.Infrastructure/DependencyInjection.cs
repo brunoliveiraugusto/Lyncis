@@ -33,7 +33,13 @@ namespace Lyncis.Identity.Infrastructure
                 x.AddEntityFrameworkOutbox<IdentityDbContext>(o =>
                 {
                     o.UseSqlServer();
-                    o.UseBusOutbox();
+                    o.QueryDelay = TimeSpan.FromSeconds(10);
+                    o.DuplicateDetectionWindow = TimeSpan.FromMinutes(30);
+
+                    o.UseBusOutbox(bo =>
+                    {
+                        bo.MessageDeliveryTimeout = TimeSpan.FromSeconds(15);
+                    });
                 });
 
                 x.UsingRabbitMq((context, cfg) =>
