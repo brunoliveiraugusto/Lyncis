@@ -8,9 +8,14 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="MassTransit.Abstractions" Version="9.1.0" />
     <PackageReference Include="MediatR" Version="14.1.0" />
     <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.9" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.15.3" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.15.3" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.15.2" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.15.1" />
 	<FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
