@@ -16,7 +16,7 @@ namespace Lyncis.Post.Infrastructure.Messaging
             var message = context.Message;
             var command = new UpdatePostAuthorNameCommand(message.UserId, message.NewName);
 
-            _logger.LogInformation("Updating posts for user {UserId} to new name {NewName}", message.UserId, message.NewName);
+            _logger.LogInformation("Processing name change for {UserId}", context.Message.UserId);
 
             await _mediator.Send(command);
         }

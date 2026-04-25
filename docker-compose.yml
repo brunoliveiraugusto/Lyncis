@@ -24,9 +24,25 @@ services:
 
     jaeger:
         image: jaegertracing/all-in-one:latest
+        container_name: lyncis-jaeger
         ports:
             - "16686:16686"
             - "4317:4317"
+
+    loki:
+        image: grafana/loki:latest
+        container_name: lyncis-loki
+        ports:
+            - "3100:3100"
+
+    grafana:
+        image: grafana/grafana:latest
+        container_name: lyncis-grafana
+        ports:
+            - "3000:3000"
+        environment:
+            - GF_AUTH_ANONYMOUS_ENABLED=true
+            - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
 
 networks:
     lyncis-network:

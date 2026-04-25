@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSharedInfrastructure();
 builder.Services.AddLyncisTelemetry("Lyncis.Identity");
+builder.Logging.AddLyncisLogging(builder.Configuration, "Lyncis.Identity");
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddControllers();
